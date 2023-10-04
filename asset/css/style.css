@@ -1,0 +1,225 @@
+*{
+    margin: 0;  padding: 0;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+@font-face {
+    font-family: "roboto";
+    src: url(../font/Roboto/Roboto-Regular.ttf);
+}
+body{
+    font-family: "roboto";
+}
+
+/* ----- header ----- */
+.flex_menu{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-weight: bold;
+    margin: 2rem;
+}
+.flex_menu a{
+    color: black;
+    transition: 0.2s color ease-in-out;
+}
+.flex_menu a:hover{
+    color: #C0192A;
+}
+.flex_menu li:not(:last-child){
+    border-right: 2px solid;
+    padding-right: 2rem;
+}
+
+
+/* ----- banner ----- */
+.banner{
+    background-image: url(../img/banner.jpg);
+    height: 400px;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 30px;
+    position: relative;
+}
+.banner img{
+    width: 50%;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    min-width: 400px;
+    transition: 1s filter ease-in-out;
+}
+.banner img:hover{
+    filter: drop-shadow(0px 0px 20px red) invert(5%);
+}
+.banner h1{
+    color: rgb(226, 226, 226);
+    font-size: 2rem;
+    position: absolute;
+    top : 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* ----- section_p ----- */
+.section_p{
+    text-align: center;
+}
+.section_p h2{
+    margin-top: 4rem;
+    font-size: 2rem;
+}
+.section_p p{
+    display: inline-block;
+    margin-top: 3rem;
+    width: 80%;
+}
+.section_p a{
+    display: inline-block;
+    margin: 5rem;
+    padding: 0.7rem 2.5rem;
+    background-color: #C0192A;
+    color: white;
+    border-radius: 5px;
+    transition: 0.5s background-color ease-in-out;
+}
+.section_p a:hover{
+    cursor: cell;
+    background-color: #6f0f19;
+    color: rgb(230, 230, 230);
+}
+
+
+/* ----- section Actu ----- */
+#actu{
+    padding-bottom: 8rem;
+}
+#actu > h2{
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+.flex_actu{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+.actu_box{
+    color: white;
+    width:20%;
+    background-color: rgb(37, 37, 37);
+}
+.actu_box img{
+    width: 100%;
+}
+.actu_box h3, p{
+    margin-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    overflow-wrap: break-word;
+}
+.actu_box p{
+    padding-bottom: 40px;
+}
+
+
+
+/* ----- formulaire section ----- */
+.formulaire{
+    background-color: #252525;
+    color: white;
+    text-align: center;
+    height: 150px;
+}
+.formulaire h2{
+    padding: 2rem 0 1rem 0;
+}
+.formulaire input:nth-child(2){
+    padding: 0.7rem 2.5rem;
+    border-radius: 5px;
+    border: 0px solid transparent;
+    color: rgba(25, 25, 25, 0.5);
+}
+/* question 1 sur2 :
+    pour enlever le value "votre adresse email" quand
+    l'utilisateur clique sur le formulaire,
+    on fait avec CSS ou JS? 
+*/
+.formulaire input:nth-child(3){
+    padding: 0.7rem 2.5rem;
+    background-color: #C0192A;
+    color: white;
+    border-radius: 5px;
+    border: 0px solid transparent;
+}
+.formulaire input:nth-child(3):hover{
+    cursor: cell;
+}
+.formulaire input:nth-child(3):active{
+    background-color: #6f0f19;
+    color: rgb(230, 230, 230);
+}
+
+
+/* ----- footer ----- */
+.flex_footer_entier{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    height: 60px;
+}
+.flex_footer_entier img{
+    height: 30px;
+}
+.flex_footer_menu{
+    display: flex;
+}
+.flex_footer_menu li a{
+    color: white;
+}
+.flex_footer_menu li:not(:last-child){
+    border-right: 1px solid white;
+    margin-right: 1rem;
+    padding-right: 1rem;
+}
+/* question 2 sur2 : 
+footer{
+    background-color: black;
+    height: 60px;
+}
+footer img{
+    height: 30px;
+}
+.flex_footer_entier{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+Quand j'ai fait comme ca,
+(au lieu de mettre un classe, j'ai mit 'footer' directement.)
+pourquoi mon align-itmes:center; (dans .flex_footer_entier)
+marchait pas?? 
+
+cf) apres, j'ai change ces 3 lignes comme de-ssous
+.flex_footer_entier{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    height: 60px;
+}
+.flex_footer_entier img{
+    height: 30px;
+}
+*/
