@@ -34,6 +34,15 @@ body{
     border-right: 2px solid;
     padding-right: 2rem;
 }
+.menu{ /* pour fixer mon navbar */
+    position: fixed;
+    display: block;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    z-index: 10;
+}
+
+
 
 
 /* ----- banner ----- */
@@ -45,6 +54,7 @@ body{
     background-repeat: no-repeat;
     padding-bottom: 30px;
     position: relative;
+    top: 50px;
 }
 .banner img{
     width: 50%;
