@@ -15,6 +15,8 @@ body{
     font-family: "roboto";
 }
 
+
+
 /* ----- header ----- */
 .flex_menu{
     display: flex;
@@ -41,7 +43,6 @@ body{
     width: 100%;
     z-index: 10;
 }
-
 
 
 
@@ -78,6 +79,7 @@ body{
 }
 
 
+
 /* ----- section_p ----- */
 .section_p{
     text-align: center;
@@ -93,7 +95,8 @@ body{
 }
 .section_p a{
     display: inline-block;
-    margin: 5rem;
+    margin: 3rem;
+    margin-bottom: 0rem;
     padding: 0.7rem 2.5rem;
     background-color: #C0192A;
     color: white;
@@ -107,14 +110,15 @@ body{
 }
 
 
+
 /* ----- section Actu ----- */
 #actu{
+    padding-top: 8rem;
     padding-bottom: 8rem;
 }
 #actu > h2{
     font-size: 2rem;
     text-align: center;
-    margin-top: 2rem;
 }
 .flex_actu{
     display: flex;
@@ -178,6 +182,7 @@ body{
     background-color: #6f0f19;
     color: rgb(230, 230, 230);
 }
+
 
 
 /* ----- footer ----- */
