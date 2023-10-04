@@ -85,7 +85,7 @@ body{
     text-align: center;
 }
 .section_p h2{
-    margin-top: 4rem;
+    margin-top: 8rem;
     font-size: 2rem;
 }
 .section_p p{
@@ -201,6 +201,7 @@ body{
 }
 .flex_footer_menu li a{
     color: white;
+    font-size: 0.6rem;
 }
 .flex_footer_menu li:not(:last-child){
     border-right: 1px solid white;
