@@ -18,6 +18,15 @@ body{
 
 
 /* ----- header ----- */
+.menu>input{
+    display: none;
+}
+input[id="menuicon"] + label{
+    display: none
+}
+.menubar{
+    display: none;
+}
 .flex_menu{
     display: flex;
     justify-content: center;
@@ -87,11 +96,46 @@ body{
 .section_p h2{
     margin-top: 8rem;
     font-size: 2rem;
+    z-index: 2;
 }
+.section_p > div{
+    position: relative;
+}
+/* .line{
+    z-index:-1;
+    background-color: #6f0f19;
+    height: 2rem;   width: 100%;
+    position: absolute;
+    left: 10%;  top: 0%;
+    width: 80%; height: 2.5rem;
+} */
+
+
+.section_p div:hover{
+
+    .line{
+        animation-name: test;
+        z-index:-1;
+        background-color: #6f0f19;
+        height: 2rem;   width: 0%;
+        position: absolute;
+        left: 10%;  top: 0%;
+        width: 80%; height: 2.5rem;
+        transition: 0.4s all ease-in;
+    }
+    .section_p h2{
+        color: white;
+        transition: 0.4s all ease-in;
+    }
+}
+
+
+
 .section_p p{
-    display: inline-block;
-    margin-top: 3rem;
+    display: block;
+    margin: 0 auto;
     width: 80%;
+    margin-top: 3rem;
 }
 .section_p a{
     display: inline-block;
@@ -122,27 +166,75 @@ body{
 }
 .flex_actu{
     display: flex;
-    width: 100%;
     justify-content: center;
     gap: 3rem;
     margin-top: 3rem;
+    min-height: 25rem;
 }
 .actu_box{
     color: white;
     width:20%;
     background-color: rgb(37, 37, 37);
+    padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
-.actu_box img{
+.actu_img{
+    height: 15rem;
+    overflow: hidden;
+}
+.actu_img > img{
+    height: 100%;
     width: 100%;
+    object-fit: cover;
+    object-position: 60%;
+    transition: 0.7s transform,filter ease-in-out;  
 }
-.actu_box h3, p{
+.changement{
+    position: relative;
+}
+.center{
+    color: rgb(188, 188, 188);
+    position: absolute;
+    font-size: 1.2rem;
+    top: 50% ;  left: 50%;
+    transform: translate(-50% , -50%);
+    opacity: 0;
+    transition: 0.9s opacity ease-in-out;
+}
+/* .changement >a:hover{
+    .actu_img > img{
+        transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        filter: grayscale(0.6);
+        filter: brightness(0.4);
+    }
+    .center{
+        opacity: 1;
+    }
+} */
+.changement>a:hover .actu_img > img{
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    filter: grayscale(0.6);
+    filter: brightness(0.4);
+}
+
+.changement>a:hover .center{
+    opacity: 1;
+}
+
+
+
+.actu_box h3{
     margin-top: 2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    overflow-wrap: break-word;
+    padding: 0 1rem;
 }
-.actu_box p{
-    padding-bottom: 40px;
+.actu_box > p{
+    margin-top: 2rem;
+    padding: 0 1rem;
+    font-weight: 100;
 }
 
 
@@ -202,6 +294,11 @@ body{
 .flex_footer_menu li a{
     color: white;
     font-size: 0.6rem;
+    transition: 0.3s color ease-in-out;
+}
+.flex_footer_menu li a:hover{
+    color: #6f0f19;
+
 }
 .flex_footer_menu li:not(:last-child){
     border-right: 1px solid white;
@@ -221,7 +318,6 @@ footer img{
     justify-content: space-around;
     align-items: center;
 }
-
 Quand j'ai fait comme ca,
 (au lieu de mettre un classe, j'ai mit 'footer' directement.)
 pourquoi mon align-itmes:center; (dans .flex_footer_entier)
@@ -239,3 +335,115 @@ cf) apres, j'ai change ces 3 lignes comme de-ssous
     height: 30px;
 }
 */
+
+
+
+/* responsive */
+@media screen and (max-width : 800px) {
+    .menu{
+        position: static;
+    }
+    .flex_menu{
+        display: none;
+    }
+    input[id="menuicon"] + label{
+        display: block;
+        width: 60px;    height: 40px;
+        position: relative;
+        cursor: pointer;
+        margin: 1.5rem 2rem -1.5rem 2rem;
+    }
+    input[id="menuicon"] +label span{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        border-radius: 30px;
+        background-color: #6f0f19;
+        transition: all .35s;
+    }
+    input[id="menuicon"] +label span:nth-child(1){
+        top: 0;
+    }
+    input[id="menuicon"] +label span:nth-child(2){
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    input[id="menuicon"] +label span:nth-child(3){
+        bottom: 0;
+    }
+    input[id="menuicon"]:checked +label span:nth-child(1){
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    }
+    input[id="menuicon"]:checked +label span:nth-child(2){
+        opacity: 0;
+    }
+    input[id="menuicon"]:checked +label span:nth-child(3){
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+    }
+    input[id="menuicon"]:checked + label + div{
+        display: block;
+    }
+    div[class="menubar"]{
+        width: 7rem;
+        height: 10.2rem;
+        background-color:rgba(2, 2, 2, 0.7);
+        position: fixed;
+        z-index: 2;
+        transition: all .35s;
+        margin: -1.3rem 0rem 0rem 6.5rem;
+    }
+    .flex_menubar{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.3rem;
+        padding: 10px;
+    }
+    .flex_menubar li a{
+        z-index: 3;
+        color: white;
+        transition: color .35s;
+    }
+    .flex_menubar li a:hover{
+        color: #6f0f19;
+    }
+
+    .banner img{
+        filter: drop-shadow(0px 0px 20px red) invert(5%);
+        transition: 3s filter;
+    }
+    .banner h1{
+        font-size: 1.5rem;
+    }
+    #actu{
+        background-color: rgb(216, 216, 216);
+        padding-top: 4rem;
+        margin-top: 4rem;
+    }
+    .flex_actu{
+       flex-direction: column;
+       align-items: center;
+    }
+    .actu_box{
+        width: 75%;
+        padding-bottom: 1rem;
+    }
+    .actu_box h3{
+        padding-left: 2rem;
+    }
+    .actu_box> p{
+        width: 85%;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-bottom: 3rem;
+    }
+    .flex_footer_entier{
+        display: none;
+    }
+    .formulaire{
+        padding-bottom: 20px;
+    }
+}

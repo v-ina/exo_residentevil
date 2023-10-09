@@ -17,6 +17,22 @@
                 <li><a href="">CONTACT</a></li>
                 <li><a href="">ACHETER</a></li>
             </ul>
+
+            <!------- mobile ------->
+            <input type="checkbox" id="menuicon">
+            <label for="menuicon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>            
+            <div class="menubar">
+                <ul class="flex_menubar">
+                    <li><a href="">ACCUEIL</a></li>
+                    <li><a href="#actu">ACTUALITES</a></li>
+                    <li><a href="">CONTACT</a></li>
+                    <li><a href="">ACHETER</a></li>
+                </ul>
+            </div>
         </nav>
 
         <div class="banner">
@@ -29,7 +45,11 @@
     <main>
 <!------- section avec description ------->
         <section class="section_p">
-            <h2>SURVIVEZ. COMBATTEZ. DECOUVREZ</h2>
+            <div>
+                <h2>SURVIVEZ. COMBATTEZ. DECOUVREZ</h2>
+                <div class="line"></div>
+            </div>
+
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis adipisci quia non rerum porro doloribus odio, officia quod eum omnis minima eveniet cupiditate necessitatibus quis sit eos excepturi sapiente voluptate.
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt totam similique reiciendis maxime, ex ea! Doloremque maxime voluptate, voluptas quasi nesciunt sed impedit illo facilis fugiat quis quam sint consectetur.
             </p>
@@ -42,17 +62,46 @@
             <h2>ACTUALITES</h2>
             <div class="flex_actu">
                 <div class="actu_box">
-                    <img src="asset/img/new-monsters.jpg" alt="">
+                    <div class="changement">
+                        <a href="">
+                            <div class="actu_img">
+                                <img src="asset/img/new-monsters.jpg" alt="">
+                            </div>
+                            <div class="center">
+                                <p>EN SAVOIR+</p>
+                            </div>
+                        </a>
+                    </div>    
                     <h3>Nouveaux monstres</h3>
                     <p>Decouvrez les nouvelles creatures effrayantes et les ameliorations graphiques apportees aux ennemis classiques de Resident Evil 4.</p>
                 </div>
+
                 <div class="actu_box">
-                    <img src="asset/img/new-graphism.jpg" alt="">
+                    <div class="changement">
+                        <a href="">
+                            <div class="actu_img">
+                                <img src="asset/img/new-graphism.jpg" alt="">
+                            </div>
+                            <div class="center">
+                                <p>EN SAVOIR+</p>
+                            </div>
+                        </a>
+                    </div> 
                     <h3>Mise à jour graphique</h3>
                     <p>Experimentez Resident Evil 4 comme jamais auparavant avec des graphismes remasterises et une atmosphere plus immersive.</p>
                 </div>
+                
                 <div class="actu_box">
-                    <img src="asset/img/new-gameplay.jpeg" alt="">
+                    <div class="changement">
+                        <a href="">
+                            <div class="actu_img">
+                                <img src="asset/img/new-gameplay.jpeg" alt="">
+                            </div> 
+                            <div class="center">   
+                                <p>EN SAVOIR+</p>
+                            </div>
+                        </a>
+                    </div> 
                     <h3>Gameplay amélioré</h3>
                     <p>Profitez d'une experience de jeu amelioree aec des commandes optimisees et de nouvelles mecaniques de jeu.</p>
                 </div>
@@ -63,7 +112,7 @@
 <!------- section de s'abonner ------->
         <section class="formulaire">
             <h2>ABONNEZ-VOUS A NOTRE NEWSLETTER</h2>
-            <input type="email" value="Votre adresse e-mail">
+            <input type="email" placeholder="Votre adresse e-mail">
             <input type="submit" value="S'abonner">
         </section>
     </main>
